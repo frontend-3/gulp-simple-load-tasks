@@ -1,0 +1,27 @@
+{
+  "name": "gulp-task-loader",
+  "version": "1.0.0",
+  "description": "Loader of gulp task in path",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jansanchez/mydependencies.git"
+  },
+  "keywords": [
+    "gulp",
+    "task"
+  ],
+ "devDependencies": {
+    "gulp": "~3.9",
+    "mocha": "~1.8.1",
+    "should": "~1.1.0",
+    "mocha-lcov-reporter": "~0.0.1",
+    "coveralls": "~2.0.7",
+    "blanket": "git://github.com/alex-seville/blanket.git#master"
+  },
+  "author": "Elizabeth Manrique <ecmanrique@gmail.com> (emanrique.com)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/emanrique/gulp-task-loader"
+  }
+}
