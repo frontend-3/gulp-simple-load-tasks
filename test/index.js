@@ -4,7 +4,7 @@ var gulp = require('gulp'),
 
 describe('gulp-task-loader', function() {
   it('load task', function () {
-    gulp.loadTasks("./test/tasks");
+    gulp.loadTasks(__dirname + "/tasks");
     should.exist(gulp.tasks['b'])
   });
 });

@@ -19,7 +19,7 @@ var gulp = require('gulp');
 
 require('gulp-simple-load-tasks')(gulp);
 
-gulp.loadTasks('./tasks')
+gulp.loadTasks(__dirname + "/tasks");
 
 ```
 
