@@ -20,7 +20,9 @@ function TaskManager(gulp) {
 }
 
 TaskManager.prototype.load = function(path) {
-  var s = stat(path);
+  var s;
+
+  s = stat(path);
 
   if (s.isDirectory()) {
     var gulp, tasks;
