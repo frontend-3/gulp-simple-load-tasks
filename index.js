@@ -1,6 +1,8 @@
-var fs = require('fs');
-var exists = fs.existsSync;
-var stat = fs.lstatSync;
+var fs, exists, stat;
+
+fs = require('fs');
+exists = fs.existsSync;
+stat = fs.lstatSync;
 
 module.exports = function(gulp) {
   var tm = new TaskManager(gulp);
@@ -21,8 +23,10 @@ TaskManager.prototype.load = function(path) {
   var s = stat(path);
 
   if (s.isDirectory()) {
-    var gulp = this.gulp;
-    var tasks = fs.readdirSync(path)
+    var gulp, tasks;
+
+    gulp = this.gulp;
+    tasks = fs.readdirSync(path)
 
     tasks.forEach(function(task) {
         task_file = path + '/' + task;
