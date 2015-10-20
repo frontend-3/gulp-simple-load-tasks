@@ -1,14 +1,15 @@
-var fs, exists, stat;
+var fs, exists, stat, path;
 
-fs = require('fs');
-exists = fs.existsSync;
-stat = fs.lstatSync;
+fs      = require('fs');
+exists  = fs.existsSync;
+stat    = fs.lstatSync;
+path    = require('path');
 
 module.exports = function(gulp) {
   var tm = new TaskManager(gulp);
 
-  function loadTasks(path) {
-    tm.load(path);
+  function loadTasks(tasksdir) {
+    tm.load(tasksdir);
   }
 
   gulp.loadTasks = loadTasks;
@@ -19,20 +20,20 @@ function TaskManager(gulp) {
   this.gulp = gulp;
 }
 
-TaskManager.prototype.load = function(path) {
+TaskManager.prototype.load = function(tasksdir) {
   var s;
 
-  s = stat(path);
+  s = stat(tasksdir);
 
   if (s.isDirectory()) {
     var gulp, tasks;
 
-    gulp = this.gulp;
-    tasks = fs.readdirSync(path)
+    gulp  = this.gulp;
+    tasks = fs.readdirSync(tasksdir)
 
-    tasks.forEach(function(task) {
-        task_file = path + '/' + task;
-        require(task_file)(gulp);
+    tasks.forEach(function(taskfile) {
+        task = path.join(tasksdir,taskfile);
+        require(task)(gulp);
     });
   }
 };
