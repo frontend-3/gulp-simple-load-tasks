@@ -35,5 +35,8 @@ TaskManager.prototype.load = function(tasksdir) {
         task = path.join(tasksdir,taskfile);
         require(task)(gulp);
     });
+
+    return;
   }
+  console.log('directory doesnt exists');
 };
