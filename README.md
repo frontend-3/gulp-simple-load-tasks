@@ -6,7 +6,7 @@ A simple "plugin" for gulp that allows you to load tasks from a path and that wa
 The package can be installed with npm
 
 ```bash
-npm install grunt-simple-load-tasks
+npm install gulp-simple-load-tasks
 ```
 
 
